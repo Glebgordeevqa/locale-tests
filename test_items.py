@@ -1,7 +1,7 @@
 import pytest
 import time
 
-def test_button(browser, request):
+def test_add_to_basket_button_locale(browser, request):
     browser.get("http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/")
     browser.implicitly_wait(10)
     lang = request.config.getoption("language")
@@ -13,5 +13,5 @@ def test_button(browser, request):
         assert check != 0, f"Button not found :("
     else:
         raise pytest.UsageError("--language should be fr or es "
-                                "(Тест не обязательно должен поддерживать все языки по задаче)")
+                                "(Сам тест не должен поддерживать все языки по задаче)")
 
